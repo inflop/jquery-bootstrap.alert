@@ -1,1 +1,1 @@
-Examples -> http://jsfiddle.net/infloper/rte369uk/
+Examples -> https://jsfiddle.net/infloper/rte369uk/

@@ -1,8 +1,35 @@
+/* global jQuery */
 /* jshint globalstrict: true */
 "use strict";
 
 if (typeof jQuery === 'undefined') {
 	throw new Error('jQuery is required');
+};
+
+var Bootstrap = {
+	AlertType: {
+		Success: {
+			Background: "alert alert-success",
+			Icon: "glyphicon glyphicon-ok"
+		},
+		Info: {
+			Background: "alert alert-info",
+			Icon: "glyphicon glyphicon-info-sign"
+		},
+		Warning: {
+			Background: "alert alert-warning",
+			Icon: "glyphicon glyphicon-alert"
+		},
+		Danger: {
+			Background: "alert alert-danger",
+			Icon: "glyphicon glyphicon-exclamation-sign"
+		},
+	},
+
+	ContentType: {
+		Html: "html",
+		Text: "text"
+	},
 };
 
 (function ($) {
@@ -80,29 +107,3 @@ if (typeof jQuery === 'undefined') {
 		});
 	};
 }(jQuery));
-
-var Bootstrap = {
-	AlertType: {
-		Success: {
-			Background: "alert alert-success",
-			Icon: "glyphicon glyphicon-ok"
-		},
-		Info: {
-			Background: "alert alert-info",
-			Icon: "glyphicon glyphicon-info-sign"
-		},
-		Warning: {
-			Background: "alert alert-warning",
-			Icon: "glyphicon glyphicon-alert"
-		},
-		Danger: {
-			Background: "alert alert-danger",
-			Icon: "glyphicon glyphicon-exclamation-sign"
-		},
-	},
-
-	ContentType: {
-		Html: "html",
-		Text: "text"
-	},
-};

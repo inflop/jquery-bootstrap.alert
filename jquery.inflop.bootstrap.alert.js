@@ -5,98 +5,6 @@ if (typeof jQuery === 'undefined') {
 	throw new Error('jQuery is required');
 };
 
-(function ($) {
-	$.fn.showBootstrapAlertSuccess = function (message, contentType, dissmisable, timeout) {
-		return this.showBootstrapAlert({
-			message: message,
-			alertType: Bootstrap.AlertType.Success,
-			dissmisable: dissmisable,
-			timeout: timeout
-		});
-	};
-
-	$.fn.showBootstrapAlertDanger = function (message, contentType, dissmisable, timeout) {
-		return this.showBootstrapAlert({
-			message: message,
-			alertType: Bootstrap.AlertType.Danger,
-			dissmisable: dissmisable,
-			timeout: timeout
-		});
-	};
-
-	$.fn.showBootstrapAlertWarning = function (message, contentType, dissmisable, timeout) {
-		return this.showBootstrapAlert({
-			message: message,
-			alertType: Bootstrap.AlertType.Warning,
-			dissmisable: dissmisable,
-			timeout: timeout
-		});
-	};
-
-	$.fn.showBootstrapAlertInfo = function (message, contentType, dissmisable, timeout) {
-		return this.showBootstrapAlert({
-			message: message,
-			alertType: Bootstrap.AlertType.Info,
-			dissmisable: dissmisable,
-			timeout: timeout
-		});
-	};
-
-	$.fn.showBootstrapAlert = function (options) {
-		var settings = $.extend({
-			message:		null,
-			alertType:		Bootstrap.AlertType.None,
-			contentType:	Bootstrap.ContentType.Text,
-			dissmisable:	false,
-			timeout:		0
-		}, options);
-
-		return this.each(function() {
-			var ref = $(this);
-			ref.empty();
-			var closeBtn = null;
-
-			$(this).addClass(settings.alertType.Background);
-
-			if (settings.dissmisable) {
-				closeBtn = $("<button></button>")
-					.prop('type', 'button')
-					.prop('aria-hidden', true)
-					.html('&times;')
-					.addClass('close')
-					.click(function () {
-						ref.hide(200);
-				});
-
-				$(this).append(closeBtn);
-			}
-
-			if (settings.timeout > 0) {
-				setTimeout(function () {
-					ref.hide(200);
-				}, settings.timeout);
-			}
-
-			var icon = $('<span></span>').prop('aria-hidden', true).addClass(settings.alertType.Icon);
-			var alert = $('<div></div>').css('display', 'inline').css('margin-left', '5px');
-
-			switch (settings.contentType) {
-				case Bootstrap.ContentType.Html:
-					alert.html(settings.message).find('a').addClass('alert-link');
-					break;
-				case Bootstrap.ContentType.Text:
-					alert.text(settings.message);
-					break;
-			}
-
-			$(this).append(icon);
-			$(this).append(alert);
-
-			$(this).show();
-		});
-	};
-}(jQuery));
-
 var Bootstrap = {
 	AlertType: {
 		None: {
@@ -392,3 +300,95 @@ var Bootstrap = {
 		MenuUp: "glyphicon glyphicon-menu-up",
 	},
 };
+
+(function ($) {
+	$.fn.showBootstrapAlertSuccess = function (message, contentType, dissmisable, timeout) {
+		return this.showBootstrapAlert({
+			message: message,
+			alertType: Bootstrap.AlertType.Success,
+			dissmisable: dissmisable,
+			timeout: timeout
+		});
+	};
+
+	$.fn.showBootstrapAlertDanger = function (message, contentType, dissmisable, timeout) {
+		return this.showBootstrapAlert({
+			message: message,
+			alertType: Bootstrap.AlertType.Danger,
+			dissmisable: dissmisable,
+			timeout: timeout
+		});
+	};
+
+	$.fn.showBootstrapAlertWarning = function (message, contentType, dissmisable, timeout) {
+		return this.showBootstrapAlert({
+			message: message,
+			alertType: Bootstrap.AlertType.Warning,
+			dissmisable: dissmisable,
+			timeout: timeout
+		});
+	};
+
+	$.fn.showBootstrapAlertInfo = function (message, contentType, dissmisable, timeout) {
+		return this.showBootstrapAlert({
+			message: message,
+			alertType: Bootstrap.AlertType.Info,
+			dissmisable: dissmisable,
+			timeout: timeout
+		});
+	};
+
+	$.fn.showBootstrapAlert = function (options) {
+		var settings = $.extend({
+			message:		null,
+			alertType:		Bootstrap.AlertType.None,
+			contentType:	Bootstrap.ContentType.Text,
+			dissmisable:	false,
+			timeout:		0
+		}, options);
+
+		return this.each(function() {
+			var ref = $(this);
+			ref.empty();
+			var closeBtn = null;
+
+			$(this).addClass(settings.alertType.Background);
+
+			if (settings.dissmisable) {
+				closeBtn = $("<button></button>")
+					.prop('type', 'button')
+					.prop('aria-hidden', true)
+					.html('&times;')
+					.addClass('close')
+					.click(function () {
+						ref.hide(200);
+				});
+
+				$(this).append(closeBtn);
+			}
+
+			if (settings.timeout > 0) {
+				setTimeout(function () {
+					ref.hide(200);
+				}, settings.timeout);
+			}
+
+			var icon = $('<span></span>').prop('aria-hidden', true).addClass(settings.alertType.Icon);
+			var alert = $('<div></div>').css('display', 'inline').css('margin-left', '5px');
+
+			switch (settings.contentType) {
+				case Bootstrap.ContentType.Html:
+					alert.html(settings.message).find('a').addClass('alert-link');
+					break;
+				case Bootstrap.ContentType.Text:
+					alert.text(settings.message);
+					break;
+			}
+
+			$(this).append(icon);
+			$(this).append(alert);
+
+			$(this).show();
+		});
+	};
+}(jQuery));

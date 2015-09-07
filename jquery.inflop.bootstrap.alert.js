@@ -1,6 +1,3 @@
-/* jshint globalstrict: true */
-"use strict";
-
 if (typeof jQuery === 'undefined') {
 	throw new Error('jQuery is required');
 };

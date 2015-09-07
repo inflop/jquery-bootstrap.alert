@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title>demo - jquery.inflop.bootstrap.alert</title>
+    <meta name="Generator" content="" />
+    <meta name="Author" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	  <link rel="stylesheet" href="Styles/style.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="Scripts/jquery.inflop.bootstrap.alert.min.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			$('#btn').click(function() {
+				$('#info').showBootstrapAlertInfo('Text "Info" alert with close button, without hide timeout.', Bootstrap.ContentType.Text, true);
+				$('#warning').showBootstrapAlertWarning('Text "Warning" alert without close button and hide timout set to 5s.', Bootstrap.ContentType.Text, false, 5000);
+				$('#danger').showBootstrapAlertDanger('Text "Danger" alert with close button and hide timout set to 4s.', Bootstrap.ContentType.Text, true, 4000);
+				$('#success').showBootstrapAlertSuccess('Text "Success" alert without close button and hide timout set to 3s.', Bootstrap.ContentType.Text, false, 3000);
+				$('#custom').showBootstrapAlert({
+					message: "Alert with html tags.<br/>Go to <a href='http://google.pl'>Google</a>",
+					alertType: { Background: 'alert background', Icon: Bootstrap.GlyphIcon.Link },
+					contentType: Bootstrap.ContentType.Html,
+					dissmisable: true,
+					timeout: 6000
+				});
+			});
+		});
+	</script>
+  </head>
+  <body>
+    <div class="all">
+      <button id="btn" class="btn btn-sm btn-primary">Show alerts</button>
+    </div>
+    <div id="info" class="all alerts"></div>
+    <div id="warning" class="all alerts"></div>
+    <div id="danger" class="all alerts"></div>
+    <div id="success" class="all alerts"></div>
+    <div id="custom" class="all alerts"></div>
+  </body>
+</html>

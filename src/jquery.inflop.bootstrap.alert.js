@@ -55,6 +55,8 @@ if (typeof jQuery === 'undefined') {
 		return this.each(function() {
 			var ref = $(this);
 			ref.empty();
+			ref.removeClass();
+
 			var closeBtn = null;
 
 			$(this).addClass(settings.alertType.Background);

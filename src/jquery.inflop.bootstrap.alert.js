@@ -10,6 +10,7 @@ if (typeof jQuery === "undefined") {
     $.fn.showBootstrapAlertSuccess = function(message, contentType, dissmisable, timeout) {
         return this.showBootstrapAlert({
             message: message,
+            contentType: contentType,
             alertType: Bootstrap.AlertType.Success,
             dissmisable: dissmisable,
             timeout: timeout
@@ -18,6 +19,7 @@ if (typeof jQuery === "undefined") {
     $.fn.showBootstrapAlertDanger = function(message, contentType, dissmisable, timeout) {
         return this.showBootstrapAlert({
             message: message,
+            contentType: contentType,
             alertType: Bootstrap.AlertType.Danger,
             dissmisable: dissmisable,
             timeout: timeout
@@ -26,6 +28,7 @@ if (typeof jQuery === "undefined") {
     $.fn.showBootstrapAlertWarning = function(message, contentType, dissmisable, timeout) {
         return this.showBootstrapAlert({
             message: message,
+            contentType: contentType,
             alertType: Bootstrap.AlertType.Warning,
             dissmisable: dissmisable,
             timeout: timeout
@@ -34,6 +37,7 @@ if (typeof jQuery === "undefined") {
     $.fn.showBootstrapAlertInfo = function(message, contentType, dissmisable, timeout) {
         return this.showBootstrapAlert({
             message: message,
+            contentType: contentType,
             alertType: Bootstrap.AlertType.Info,
             dissmisable: dissmisable,
             timeout: timeout
